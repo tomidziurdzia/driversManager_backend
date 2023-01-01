@@ -15,6 +15,7 @@ dotenv.config();
 connectDB();
 
 // Configurar CORS
+// Probando Git de Back
 
 const whitelist = [process.env.FRONTEND_URL];
 
