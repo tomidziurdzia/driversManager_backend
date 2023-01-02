@@ -59,7 +59,12 @@ const newTravel = async (req, res) => {
     platformExist.travels.push(newTravel._id);
     await platformExist.save();
 
+    vehicleExist.travels.push(newTravel._id);
+    await vehicleExist.save();
+
     await newTravel.save();
+
+    console.log(newTravel);
 
     res.json(newTravel);
     // console.log(newTravel);

@@ -1,7 +1,10 @@
 import Vehicle from "../models/Vehicle.js";
 
 const getVehicles = async (req, res) => {
-  const vehicles = await Vehicle.find().where("user").equals(req.user);
+  const vehicles = await Vehicle.find()
+    .populate({ path: "travels", select: "km" })
+    .where("user")
+    .equals(req.user);
   res.json(vehicles);
 };
 

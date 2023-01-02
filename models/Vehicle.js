@@ -38,6 +38,12 @@ const vehicleSchema = mongoose.Schema(
       type: mongoose.Schema.Types.ObjectId,
       ref: "User",
     },
+    travels: [
+      {
+        type: mongoose.Schema.Types.ObjectId,
+        ref: "Travel",
+      },
+    ],
   },
   {
     timestamps: true,
