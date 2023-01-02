@@ -62,7 +62,7 @@ const newTravel = async (req, res) => {
     await newTravel.save();
 
     res.json(newTravel);
-    console.log(newTravel);
+    // console.log(newTravel);
   } catch (error) {
     console.log(error);
   }
