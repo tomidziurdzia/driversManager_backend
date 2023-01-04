@@ -6,7 +6,6 @@ const vehicleSchema = mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique: true,
     },
     model: {
       type: String,

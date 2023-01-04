@@ -20,11 +20,11 @@ const getPlatforms = async (req, res) => {
 const newPlatform = async (req, res) => {
   const { name } = req.body;
 
-  const platformExist = await Platform.findOne({ name });
-  if (platformExist) {
-    const error = new Error("There is already a platform with this name");
-    return res.status(404).json({ msg: error.message });
-  }
+  // const platformExist = await Platform.findOne({ name });
+  // if (platformExist) {
+  //   const error = new Error("There is already a platform with this name");
+  //   return res.status(404).json({ msg: error.message });
+  // }
 
   // Compruebo que ingrese el nombre
   if (!name) {
@@ -83,7 +83,7 @@ const editPlatform = async (req, res) => {
   // }
 
   const platform = await Platform.findById(id);
-  const platformExist = await Platform.findOne({ name });
+  // const platformExist = await Platform.findOne({ name });
 
   // Compruebo que exista la platform
   if (!platform) {
@@ -92,10 +92,10 @@ const editPlatform = async (req, res) => {
   }
 
   // Compruebo que ya no haya una plataforma con ese nombre
-  if (platformExist?.name) {
-    const error = new Error("There is already a platform with this name");
-    return res.status(404).json({ msg: error.message });
-  }
+  // if (platformExist?.name) {
+  //   const error = new Error("There is already a platform with this name");
+  //   return res.status(404).json({ msg: error.message });
+  // }
 
   // Verifico que la plataforma pertenezca al usuario logueado
   if (platform.user.toString() !== req.user._id.toString()) {

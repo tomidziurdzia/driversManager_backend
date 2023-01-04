@@ -11,11 +11,11 @@ const getVehicles = async (req, res) => {
 const newVehicle = async (req, res) => {
   const { patent, typeVehicle } = req.body;
 
-  const patentExist = await Vehicle.findOne({ patent });
-  if (patentExist) {
-    const error = new Error("There is already a vehicle with this patent");
-    return res.status(404).json({ msg: error.message });
-  }
+  // const patentExist = await Vehicle.findOne({ patent });
+  // if (patentExist) {
+  //   const error = new Error("There is already a vehicle with this patent");
+  //   return res.status(404).json({ msg: error.message });
+  // }
 
   // Compruebo que se ingrese el tipo de vehiculo
   if (!typeVehicle) {

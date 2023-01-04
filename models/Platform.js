@@ -6,7 +6,6 @@ const platformSchema = mongoose.Schema(
       type: String,
       required: true,
       trim: true,
-      unique: true,
     },
     user: {
       type: mongoose.Schema.Types.ObjectId,
