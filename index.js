@@ -18,6 +18,7 @@ connectDB();
 // Probando Git de Back
 
 const whitelist = [process.env.FRONTEND_URL];
+console.log(whitelist);
 
 const corsOptions = {
   origin: function (origin, callback) {
