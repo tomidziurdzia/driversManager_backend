@@ -17,21 +17,21 @@ connectDB();
 // Configurar CORS
 // Probando Git de Back
 
-// const whitelist = [process.env.FRONTEND_URL];
-// console.log(whitelist);
+const whitelist = [process.env.FRONTEND_URL];
+console.log(whitelist);
 
-// const corsOptions = {
-//   origin: function (origin, callback) {
-//     if (whitelist.indexOf(origin) !== -1) {
-//       // El origen del request esta permitido
-//       callback(null, true);
-//     } else {
-//       callback(new Error("No permitido por CORS"));
-//     }
-//   },
-// };
+const corsOptions = {
+  origin: function (origin, callback) {
+    if (whitelist.indexOf(origin) !== -1) {
+      // El origen del request esta permitido
+      callback(null, true);
+    } else {
+      callback(new Error("No permitido por CORS"));
+    }
+  },
+};
 
-// app.use(cors(corsOptions));
+app.use(cors(corsOptions));
 
 // Routing
 app.use("/api/users", userRoutes);
